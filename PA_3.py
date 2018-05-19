@@ -1,12 +1,25 @@
 def partition(a, l, r):
-    '''return the index of pivot'''
+    """return the index of pivot
+
+    --------------------------------------------------------
+    Invariant:
+    all elements between the pivot and i are less than the pivot, and
+    all elements between the i and j are greater than the pivot
+    --------------------------------------------------------
+
+    i points to the first element greater than the pivot
+    j points to the next element to be compared with the pivot
+
+    pivot is fixed until partitioning is done
+
+    """
     p = a[l]    # use the leftmost element as the pivot
     i = l + 1
     for j in range(l + 1, r + 1):
         if a[j] < p:
             a[j], a[i] = a[i], a[j]
             i += 1
-    a[l], a[i-1] = a[i-1], a[l]
+    a[l], a[i-1] = a[i-1], a[l]  # swap pivot element to the rightful position
 
     return i - 1
 
