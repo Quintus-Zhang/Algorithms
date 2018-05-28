@@ -10,6 +10,11 @@ import sys, time, threading
 sys.setrecursionlimit(800000)
 threading.stack_size(67108864)
 
+# TODO: refractor the code
+# https://github.com/ladamalina/coursera-algo/blob/master/PQ4.%20SCCs/kosaraju.py
+# https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+# https://www.coursera.org/learn/algorithms-graphs-data-structures/discussions/weeks/1/threads/JiHDKJnVEeetAQoC-amJYg
+
 def load_graph():
     # read the text file
     with open('SCC.txt', 'r') as f:
@@ -114,3 +119,5 @@ def main():
 
 thread = threading.Thread(target=main)
 thread.start()
+
+
